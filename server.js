@@ -15,8 +15,15 @@ app.use(express.static("public"));
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
-db.sequelize.sync({force: true}).then(function() {
+// routes go here
+const routes = require("./controller/burger-controller");
+
+app.use(routes);
+
+db.sequelize.sync().then(function() {
     app.listen(PORT, ()=>{
         console.log("server is live on http://localhost:8080");
     })
 })
+
+// {force: true}

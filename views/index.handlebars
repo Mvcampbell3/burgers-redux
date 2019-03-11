@@ -1,1 +1,34 @@
-<h1>This is working</h1>
+<header>
+    Burger List
+</header>
+
+<div class="container">
+    <div class="addBurger">
+        <input type="text" name="" id="burgerName">
+        <button id="addBtn" class="addBtn btn">Add Burger</button>
+    </div>
+    <div class="line"></div>
+    <div class="wrapper">
+
+        <div class="displayArea devourFalse">
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{>burgers/burger-block devour=true}}
+            {{/unless}}
+            {{/each}}
+        </div>
+
+        <div class="displayArea devourTrue">
+            {{#each burgers}}
+            {{#if devoured}}
+            {{>burgers/burger-block devour=false}}
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+
+
+
+
+
+</div>
