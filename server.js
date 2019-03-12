@@ -25,5 +25,3 @@ db.sequelize.sync().then(function() {
         console.log("server is live on http://localhost:8080");
     })
 })
-
-// {force: true}

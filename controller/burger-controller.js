@@ -15,7 +15,6 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
     db.Burger.findAll({}).then(data => {
-        // console.log(data);
         let sendObj = {
             burgers: data,
         }
